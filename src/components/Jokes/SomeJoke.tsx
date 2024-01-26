@@ -1,9 +1,13 @@
 import React from 'react';
 
-const SomeJoke:React.FC = () => {
+interface Props {
+    joke: string
+}
+
+const SomeJoke:React.FC<Props> = ({joke}) => {
     return (
         <div>
-            someJoke
+            <p className="m-2 px-5 py-3 border border-black">{joke}</p>
         </div>
     );
 };

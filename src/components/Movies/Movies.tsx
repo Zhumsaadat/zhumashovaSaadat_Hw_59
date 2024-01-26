@@ -28,12 +28,17 @@ const deleteMovie=(id) =>{
 
 const addMovie = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const id = movies.length + 1;
-    const newMovie = { name, id };
-    setMovies(prevMovies => [...prevMovies, newMovie]);
-    console.log(movies)
-    e.target.name.value = '';
+        const name = e.target.name.value;
+        const id = movies.length + 1;
+        const newMovie = {name, id};
+    if(name !== null){
+        setMovies(prevMovies => [...prevMovies, newMovie]);
+        console.log(movies)
+        e.target.name.value = '';
+
+    } else {
+        alert('Введите называние фильма')
+    }
 }
 
 
